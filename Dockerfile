@@ -3,8 +3,12 @@ LABEL MAINTAINER="Greg Junge <gregnuj@gmail.com>"
 USER root
 
 # add haproxy
-COPY --from=library/haproxy:alpine /usr/local/sbin /usr/local/sbin
-COPY --from=library/haproxy:alpine /usr/local/etc/haproxy /usr/local/etc/haproxy
+RUN set -ex \
+	    && apt-get update \
+	    && apt-get install -y \
+	    haproxy \
+	    && rm -r /var/lib/apt/lists/*
+
 
 # add files in rootfs
 ADD ./rootfs /
