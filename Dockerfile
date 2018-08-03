@@ -1,4 +1,4 @@
-FROM gregnuj/cyclops-lap:latest
+FROM gregnuj/cyclops-lap:stretch
 LABEL MAINTAINER="Greg Junge <gregnuj@gmail.com>"
 USER root
 
