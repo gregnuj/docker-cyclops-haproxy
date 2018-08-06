@@ -2,11 +2,6 @@ FROM gregnuj/cyclops-lap:stretch
 LABEL MAINTAINER="Greg Junge <gregnuj@gmail.com>"
 USER root
 
-# package reqs
-RUN set -ex \
-    && apk add --no-cache \
-    lua5.3-libs
-
 # add haproxy
 RUN set -ex \
 	    && apt-get update \
