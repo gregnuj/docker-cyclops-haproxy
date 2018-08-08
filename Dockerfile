@@ -14,5 +14,5 @@ RUN set -ex \
 ADD ./rootfs /
 
 WORKDIR /var/www/html
-EXPOSE 22 80 443
+EXPOSE 22 80 443 8000
 CMD ["/usr/bin/supervisord", "-n"]
