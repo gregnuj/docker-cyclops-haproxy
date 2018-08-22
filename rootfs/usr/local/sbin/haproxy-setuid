@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export HAPROXY_CFG="${HAPROXY_CFG:-/usr/local/etc/haproxy/haproxy.cfg}"
+exec /usr/local/sbin/haproxy -f $HAPROXY_CFG
