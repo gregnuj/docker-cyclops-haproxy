@@ -13,6 +13,9 @@ RUN set -ex \
 # add files in rootfs
 ADD ./rootfs /
 
+RUN set -ex \
+    && chmod 4755 '/usr/local/sbin/hsproxy-setuid' 
+
 WORKDIR /var/www/html
-EXPOSE 22 80 443 8000
+EXPOSE 22 80 443 8000 9001
 CMD ["/usr/bin/supervisord", "-n"]
