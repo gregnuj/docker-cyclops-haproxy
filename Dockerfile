@@ -15,7 +15,7 @@ COPY --from=library/haproxy:alpine /usr/local/etc/haproxy /usr/local/etc/haproxy
 ADD ./rootfs /
 
 RUN set -ex \
-    && chmod 4755 '/usr/local/sbin/hsproxy-setuid' 
+    && chmod 4755 '/usr/local/sbin/haproxy-setuid' 
 
 WORKDIR /var/www/html
 EXPOSE 22 80 443 8000 9001
